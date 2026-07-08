@@ -1,0 +1,1 @@
+pnpm prettier-linting && pnpm lint && pnpm typesafety && pnpm test && pnpm build
