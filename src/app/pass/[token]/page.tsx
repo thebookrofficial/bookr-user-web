@@ -103,12 +103,12 @@ export default async function EventPassPage({ params }: PassPageProps) {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans text-gray-800">
       <div className="max-w-sm w-full bg-white rounded-[2rem] overflow-hidden relative shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)]">
         {/* Top Header Logo */}
-        <div className="bg-[#63A1FD] pt-4 pb-2 flex justify-center relative z-10 border-b-4 border-[#63A1FD]">
+        <div className="bg-[#63A1FD] pt-2 pb-1 flex justify-center relative z-10 border-b-4 border-[#63A1FD]">
           <Image
             src={logoImg}
             alt="Bookr Logo"
-            width={180}
-            height={180}
+            width={140}
+            height={140}
             className="object-contain"
           />
         </div>
@@ -124,12 +124,12 @@ export default async function EventPassPage({ params }: PassPageProps) {
               className="rounded-xl object-cover w-[100px] h-[120px] shadow-sm border border-gray-100"
             />
           ) : (
-            <div className="w-[100px] h-[120px] bg-gray-50 rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+            <div className="w-[80px] h-[120px] bg-gray-50 rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
               <Calendar size={32} className="text-gray-300" />
             </div>
           )}
           <div className="flex-1">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight line-clamp-2">
+            <h1 className="text-xl font-bold text-gray-900 mb-2 leading-tight line-clamp-2">
               {event.title || "Bookr Event"}
             </h1>
             <p className="text-[10px] text-[#63A1FD] font-bold tracking-widest uppercase bg-[#63A1FD]/10 inline-block px-2 py-1 rounded-md mb-2">
@@ -143,7 +143,7 @@ export default async function EventPassPage({ params }: PassPageProps) {
         </div>
 
         {/* QR Code Section */}
-        <div className="px-6 py-2 flex flex-col items-center relative z-10 bg-white border-t border-gray-50">
+        <div className="px-6 flex flex-col items-center relative z-10 bg-white border-t border-gray-50">
           <div className="bg-white p-4 rounded-2xl mb-4 relative shadow-[0_0_20px_rgba(0,0,0,0.06)] border border-gray-100">
             {isUsed && (
               <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-10 flex items-center justify-center rounded-2xl">
@@ -154,7 +154,7 @@ export default async function EventPassPage({ params }: PassPageProps) {
             )}
             <QRCode
               value={token}
-              size={200}
+              size={190}
               style={{ height: "auto", maxWidth: "100%", width: "100%" }}
               viewBox={`0 0 256 256`}
               fgColor="#000000"
@@ -164,9 +164,9 @@ export default async function EventPassPage({ params }: PassPageProps) {
             {isUsed ? "This pass has already been used." : "Present this QR code at the entrance."}
           </p>
           {!isUsed && (
-            <div className="mt-2 bg-amber-50 border border-amber-100/50 px-3 py-1.5 rounded-lg flex items-center justify-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
-              <p className="text-[10px] text-amber-600 font-bold uppercase tracking-widest">
+            <div className="mt-2 bg-[#63A1FD20] border border-amber-100/50 px-3 py-1.5 rounded-lg flex items-center justify-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#63A1FD]"></div>
+              <p className="text-[10px] text-[#63A1FD] font-bold uppercase tracking-widest">
                 Note: Valid for one scan only
               </p>
             </div>
@@ -181,9 +181,9 @@ export default async function EventPassPage({ params }: PassPageProps) {
         </div>
 
         {/* Bottom Details Section (Stub) */}
-        <div className="px-6 pt-6 pb-6 bg-gray-50/80">
-          <div className="grid grid-cols-2 gap-y-5 gap-x-4">
-            <div>
+        <div className="px-8 pb-6 bg-gray-50/10">
+          <div className="grid grid-cols-2 gap-y-5 gap-x-24">
+            <div className="w-42">
               <p className="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-1">
                 Attendee
               </p>
