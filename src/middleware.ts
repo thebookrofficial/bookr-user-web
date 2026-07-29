@@ -7,6 +7,12 @@ export function middleware(request: NextRequest) {
   // Check if the user is on a mobile device
   const isMobile = /mobile|android|iphone|ipad/i.test(userAgent);
 
+  // Exclude the digital pass routes from mobile redirection
+  // so the new ticket UI we built on the Desktop Web project is always shown!
+  if (request.nextUrl.pathname.startsWith("/pass")) {
+    return NextResponse.next();
+  }
+
   if (isMobile) {
     // Seamlessly proxy the request to the Mobile PWA Vercel deployment
     const pwaUrl = new URL(
